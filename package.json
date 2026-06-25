@@ -1,0 +1,12 @@
+{
+  "name": "wie-new",
+  "version": "1.0.0",
+  "description": "IEEE Women In Engineering Affinity Group of IIT Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 3000"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

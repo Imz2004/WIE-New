@@ -49,5 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainNav.classList.contains('active').toString());
             });
         }
+        
+        // Notify other scripts that dynamic components have loaded
+        document.dispatchEvent(new CustomEvent('componentsLoaded'));
     });
 });
