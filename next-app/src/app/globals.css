@@ -1,44 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030303;
-  --foreground: #fafafa;
+  --site-bg: #ffffff; /* Pure white */
+  --site-fg: #111111; /* Pure black text */
   --primary: #8b5cf6; /* Violet 500 */
   --primary-foreground: #ffffff;
   --secondary: #ec4899; /* Pink 500 */
   --secondary-foreground: #ffffff;
-  --muted: #0c0c0e;
-  --muted-foreground: #a1a1aa;
-  --accent: #18181b;
-  --accent-foreground: #fafafa;
-  --card: #09090b;
-  --card-foreground: #fafafa;
-  --border: #1f1f23;
+  --site-muted: #f8fafc; /* Slate 50 */
+  --site-muted-foreground: #475569; /* Slate 600 */
+  --site-accent: #f1f5f9; /* Slate 100 */
+  --site-accent-foreground: #111111;
+  --site-card: rgba(255, 255, 255, 0.85);
+  --site-card-foreground: #111111;
+  --site-border: #e2e8f0;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(139, 92, 246, 0.12);
+}
+
+.dark {
+  --site-bg: #000000; /* Pure black */
+  --site-fg: #ffffff; /* White text */
+  --primary: #8b5cf6; /* Violet 500 */
+  --primary-foreground: #ffffff;
+  --secondary: #ec4899; /* Pink 500 */
+  --secondary-foreground: #ffffff;
+  --site-muted: #0c0c0e;
+  --site-muted-foreground: #a1a1aa;
+  --site-accent: #18181b;
+  --site-accent-foreground: #ffffff;
+  --site-card: rgba(9, 9, 11, 0.6);
+  --site-card-foreground: #ffffff;
+  --site-border: #1f1f23;
+  --glass-bg: rgba(9, 9, 11, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.05);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--site-bg);
+  --color-foreground: var(--site-fg);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-border: var(--border);
+  --color-muted: var(--site-muted);
+  --color-muted-foreground: var(--site-muted-foreground);
+  --color-accent: var(--site-accent);
+  --color-accent-foreground: var(--site-accent-foreground);
+  --color-card: var(--site-card);
+  --color-card-foreground: var(--site-card-foreground);
+  --color-border: var(--site-border);
   
   --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--site-bg);
+  color: var(--site-fg);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 html {
@@ -47,10 +68,9 @@ html {
 
 /* Glassmorphism utility classes */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
-

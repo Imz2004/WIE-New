@@ -102,11 +102,11 @@ export default function OurTeam() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group flex flex-col items-center glass backdrop-blur-xl bg-white/5 border border-white/10 p-6 rounded-3xl hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] transition-all duration-300 relative overflow-hidden"
+      className="group flex flex-col items-center glass p-6 rounded-3xl hover:border-primary/50 hover:shadow-[0_8px_30px_rgba(139,92,246,0.12)] dark:hover:shadow-[0_8px_30px_rgba(139,92,246,0.25)] transition-all duration-300 relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
       
-      <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-6 border-4 border-muted group-hover:border-primary/50 transition-colors duration-300 shrink-0">
+      <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-6 border-4 border-muted group-hover:border-primary/50 transition-all duration-300 shrink-0">
         <Image
           src={member.image}
           alt={member.name}
@@ -116,21 +116,21 @@ export default function OurTeam() {
         />
       </div>
       
-      <h3 className="text-xl font-bold mb-1 text-center text-white">{member.name}</h3>
-      <p className="text-primary font-medium text-sm text-center mb-6">{member.role}</p>
+      <h3 className="text-xl font-bold mb-1 text-center text-foreground transition-colors duration-300">{member.name}</h3>
+      <p className="text-primary font-semibold text-sm text-center mb-6">{member.role}</p>
       
       <div className="flex gap-4 mt-auto relative z-10">
         <a
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-[#0A66C2] hover:text-white transition-all hover:-translate-y-1"
+          className="w-10 h-10 rounded-full bg-muted/60 border border-border/40 flex items-center justify-center text-muted-foreground hover:bg-[#0A66C2] hover:text-white transition-all hover:-translate-y-1"
         >
           <FaLinkedinIn size={18} />
         </a>
         <a
           href={`mailto:${member.email}`}
-          className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-secondary hover:text-white transition-all hover:-translate-y-1"
+          className="w-10 h-10 rounded-full bg-muted/60 border border-border/40 flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-white transition-all hover:-translate-y-1"
         >
           <Mail size={18} />
         </a>
@@ -139,14 +139,14 @@ export default function OurTeam() {
   );
 
   return (
-    <div className="flex flex-col w-full bg-[#0a0a0f] min-h-screen relative overflow-hidden">
+    <div className="flex flex-col w-full bg-background min-h-screen relative overflow-hidden transition-colors duration-300">
       {/* Purple Pattern Background */}
-      <div className="fixed inset-0 z-0 opacity-20 pointer-events-none" style={{
+      <div className="fixed inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none" style={{
           backgroundImage: `radial-gradient(#8b5cf6 1px, transparent 1px)`,
           backgroundSize: '24px 24px'
       }} />
       {/* Gradient overlays to smooth edges */}
-      <div className="fixed inset-0 z-0 bg-gradient-to-b from-[#030303] via-transparent to-[#030303] pointer-events-none" />
+      <div className="fixed inset-0 z-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
 
       {/* Header Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 z-10">
@@ -156,10 +156,10 @@ export default function OurTeam() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white drop-shadow-md">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground drop-shadow-sm">
               Our <span className="text-primary italic font-serif lowercase">Team</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Meet the dedicated student leaders behind IEEE Women In Engineering Affinity Group of IIT.
             </p>
           </motion.div>
@@ -170,7 +170,7 @@ export default function OurTeam() {
       <section className="py-16 relative z-10">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold inline-block relative text-white">
+            <h2 className="text-3xl md:text-4xl font-bold inline-block relative text-foreground">
               Executive Committee
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
             </h2>
@@ -190,7 +190,7 @@ export default function OurTeam() {
       <section className="py-16 md:py-24 relative z-10">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold inline-block relative text-white">
+            <h2 className="text-3xl md:text-4xl font-bold inline-block relative text-foreground">
               Standing Committee Leads
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent rounded-full" />
             </h2>
