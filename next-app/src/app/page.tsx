@@ -244,7 +244,7 @@ export default function Home() {
                   transition={{ duration: 0.6 }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
-                  <div className="absolute left-0 sm:left-[11px] md:left-[23px] top-2 w-2 h-2 rounded-full bg-primary hidden sm:block shadow-[0_0_10px_#8b5cf6]" />
+                  <div className="absolute left-0 sm:left-[11px] md:left-[23px] top-2 w-2 h-2 rounded-full bg-white hidden sm:block" />
                   <div className="flex-1">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase mb-2 block">Pillar 01 / Educate</span>
                     <h4 className="text-2xl font-bold mb-3">Workshops & Sessions</h4>
@@ -282,7 +282,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
-                  <div className="absolute left-0 sm:left-[11px] md:left-[23px] top-2 w-2 h-2 rounded-full bg-secondary hidden sm:block shadow-[0_0_10px_#ec4899]" />
+                  <div className="absolute left-0 sm:left-[11px] md:left-[23px] top-2 w-2 h-2 rounded-full bg-white hidden sm:block" />
                   <div className="flex-1">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase mb-2 block">Pillar 03 / Excel</span>
                     <h4 className="text-2xl font-bold mb-3">Outreach & Mentorship</h4>
@@ -330,15 +330,7 @@ export default function Home() {
       </section>
 
       {/* Our Work Section */}
-      <section id="our-work" className="py-24 md:py-32 relative overflow-hidden bg-[#0a0a0f]">
-        {/* Purple Pattern Background */}
-        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{
-            backgroundImage: `radial-gradient(#8b5cf6 1px, transparent 1px)`,
-            backgroundSize: '24px 24px'
-        }} />
-        {/* Gradient overlays to smooth edges */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303] pointer-events-none" />
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#030303] via-transparent to-[#030303] pointer-events-none" />
+      <section id="our-work" className="py-24 md:py-32 relative overflow-hidden bg-transparent">
 
         <div className="container px-4 md:px-6 mx-auto relative z-10">
           <div className="flex items-center justify-center mb-16">

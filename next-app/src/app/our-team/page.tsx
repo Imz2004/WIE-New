@@ -139,14 +139,7 @@ export default function OurTeam() {
   );
 
   return (
-    <div className="flex flex-col w-full bg-[#0a0a0f] min-h-screen relative overflow-hidden">
-      {/* Purple Pattern Background */}
-      <div className="fixed inset-0 z-0 opacity-20 pointer-events-none" style={{
-          backgroundImage: `radial-gradient(#8b5cf6 1px, transparent 1px)`,
-          backgroundSize: '24px 24px'
-      }} />
-      {/* Gradient overlays to smooth edges */}
-      <div className="fixed inset-0 z-0 bg-gradient-to-b from-[#030303] via-transparent to-[#030303] pointer-events-none" />
+    <div className="flex flex-col w-full bg-transparent min-h-screen relative overflow-hidden">
 
       {/* Header Section */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 z-10">
@@ -176,9 +169,9 @@ export default function OurTeam() {
             </h2>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
             {excoMembers.map((member, index) => (
-              <div key={member.name} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] max-w-sm">
+              <div key={member.name} className="w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.33rem)] max-w-sm">
                 <TeamMemberCard member={member} index={index} />
               </div>
             ))}
@@ -192,13 +185,13 @@ export default function OurTeam() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold inline-block relative text-white">
               Standing Committee Leads
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent rounded-full" />
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto justify-items-center">
+          <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
             {standingCommittee.map((member, index) => (
-              <div key={member.name} className="w-full max-w-sm">
+              <div key={member.name} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] xl:w-[calc(25%-1.5rem)] max-w-sm">
                 <TeamMemberCard member={member} index={index} />
               </div>
             ))}
