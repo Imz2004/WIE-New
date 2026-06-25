@@ -114,7 +114,7 @@ export default function Header() {
               alt="IEEE WIE Logo"
               fill
               className={`object-contain transition-all duration-300 ${
-                theme === "dark" ? "brightness-0 invert" : ""
+                theme !== "dark" ? "brightness-0 opacity-80" : "brightness-0 invert"
               }`}
               priority
             />

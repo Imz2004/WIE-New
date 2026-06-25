@@ -2,8 +2,8 @@
   --primary: #42126c;
   --secondary: #9c14db;
   --accent: #eeeeec;
-  --light: #f4f4f4;
-  --dark: #1d2731;
+  --light: #ffffff; /* pure white background for light theme */
+  --dark: #111111;  /* pure black text for light theme */
 }
 
 * {
@@ -669,3 +669,125 @@ footer {
     font-size: 1.8rem;
   }
 }
+
+/* --- Dark Theme Support --- */
+
+/* Dark Mode Variables Override */
+html.dark {
+  --light: #000000; /* pure black background for dark theme */
+  --dark: #ffffff;  /* pure white text for dark theme */
+}
+
+/* Smooth transition for theme change */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles Override */
+html.dark body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Header Adjustments in Dark Mode */
+html.dark header {
+  background-color: #0c0c0e !important;
+  border-bottom: 1px solid #1f1f23;
+}
+html.dark .main-nav {
+  background-color: #16161a !important;
+}
+html.dark .nav-toggle .hamburger span {
+  background: #ffffff;
+}
+
+/* Override background colors of sections */
+html.dark .events,
+html.dark #contact,
+html.dark .event-section {
+  background-color: #000000 !important;
+}
+
+/* Text overrides in Dark Mode */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark .section-header h2,
+html.dark .event-title,
+html.dark .content-title,
+html.dark .detail-item,
+html.dark .detail-item i,
+html.dark .about-text h2,
+html.dark .about-text p,
+html.dark .about-content p,
+html.dark .event-content h3 {
+  color: #ffffff !important;
+}
+
+html.dark .section-header p,
+html.dark .event-description,
+html.dark .event-date,
+html.dark .footer-nav a,
+html.dark .contact-text p,
+html.dark .contact-text a {
+  color: #cccccc !important;
+}
+
+/* Event Cards in Dark Mode */
+html.dark .event-card {
+  background: #0d0d0f !important;
+  border: 1px solid #1f1f23 !important;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.03) !important;
+}
+
+html.dark .event-card:hover {
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .event-content a {
+  color: #c084fc !important; /* Lighter violet/purple */
+  border-top: 1px solid #1f1f23 !important;
+}
+
+html.dark .event-content a:hover {
+  color: #e9d5ff !important;
+}
+
+/* Contact card in Dark Mode */
+html.dark .contact-card {
+  background-color: #0d0d0f !important;
+  border: 1px solid #1f1f23 !important;
+}
+
+/* Footer bottom border */
+html.dark .footer-bottom {
+  border-top: 1px solid #1f1f23 !important;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-left: 15px;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--secondary);
+  transform: scale(1.15) rotate(15deg);
+}
+
+html.dark .theme-toggle-btn:hover {
+  color: #c084fc;
+}
+

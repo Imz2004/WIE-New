@@ -1,6 +1,49 @@
+// Apply theme immediately to prevent flashing
+(function() {
+  const savedTheme = localStorage.getItem('theme');
+  const isLight = savedTheme === 'light';
+  if (isLight) {
+    document.documentElement.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
   function init() {
     console.log('script.js initializing...');
+
+    // Inject and initialize theme toggle button
+    const headerContainer = document.querySelector('.header-container');
+    if (headerContainer && !document.querySelector('.theme-toggle-btn')) {
+      const toggleBtn = document.createElement('button');
+      toggleBtn.className = 'theme-toggle-btn';
+      toggleBtn.setAttribute('aria-label', 'Toggle light and dark theme');
+      
+      const isDark = document.documentElement.classList.contains('dark');
+      toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      
+      // Insert before the nav-toggle button
+      const navToggleBtn = document.querySelector('.nav-toggle');
+      if (navToggleBtn) {
+        headerContainer.insertBefore(toggleBtn, navToggleBtn);
+      } else {
+        headerContainer.appendChild(toggleBtn);
+      }
+      
+      toggleBtn.addEventListener('click', function() {
+        const currentlyDark = document.documentElement.classList.contains('dark');
+        if (currentlyDark) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+      });
+    }
     // Select DOM elements
     const navToggle = document.querySelector('.nav-toggle');
     const mainNav = document.querySelector('.main-nav');
