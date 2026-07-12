@@ -21,8 +21,7 @@ export default function Home() {
 
   const highlightCards = [
     { value: "150+", label: "Active Volunteers", icon: Users },
-    { value: "15+", label: "Annual Events", icon: Calendar },
-    { value: "3", label: "Core Pillars", icon: Target },
+    { value: "6+", label: "Annual Events", icon: Calendar },
     { value: "IIT", label: "Student Branch", icon: Globe },
     { value: "2026", label: "Designing the Future", icon: Star },
   ];
@@ -40,7 +39,7 @@ export default function Home() {
     },
     {
       title: "Competitions",
-      description: "Participate in national hackathons like SHErlock, UI/UX battles, and ideathons.",
+      description: "Participate in hackathons like SHErlock and ideathons.",
       icon: Award,
     },
     {
@@ -64,6 +63,20 @@ export default function Home() {
       description: "Becoming was an inspiring Women’s Day session where Dr. Dilhari Attygalle shared real, unspoken lessons from her journey as a woman in tech and leadership.",
       image: "/Images/Becoming/becoming.jpg",
       link: "/events/becoming",
+    },
+    {
+      title: "FUSION",
+      date: "December 13, 2025",
+      description: "FUSION was a career development workshop where experts from WSO2 shared their valuable insights and deep knowledge on Site Reliability Engineering (SRE).",
+      image: "/Images/Fusion/Fusion.jpg",
+      link: "/events/fusion",
+    },
+    {
+      title: "AdaptIQ",
+      date: "October - November 2025",
+      description: "AdaptIQ was a nationwide innovation initiative featuring regional workshops in Colombo, Galle, and Kurunegala, followed by a 24-hour finale.",
+      image: "/Images/Adaptiq/Adaptiq.jpg",
+      link: "/events/adaptiq",
     },
     {
       title: "SyncUp",

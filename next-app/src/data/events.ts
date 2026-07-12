@@ -48,6 +48,54 @@ export const events = [
     ]
   },
   {
+    "slug": "fusion",
+    "title": "FUSION",
+    "subtitle": "A Career Development Workshop",
+    "date": "December 13, 2025",
+    "location": "IIT Campus",
+    "participants": "50+ Participants",
+    "description": [
+      "FUSION, a career development workshop organized by the IEEE WIE Affinity Group of IIT, offered honest insights into career growth, confidence, internships, and the transition from university to industry, including real discussions on the current job market and industry expectations.",
+      "A special thanks to Sulakshana Bandara Karunarathne for sharing his inspiring journey from university to industry.",
+      "Mr. Deependra Ariyadewa, Miran Kurukulasuriya, and Uvindu Dharmawardana from WSO2 gave real-world perspectives on Site Reliability Engineering (SRE)."
+    ],
+    "image": "/Images/Fusion/Fusion.jpg",
+    "gallery": [
+      "/Images/Fusion/Fusion 1.jpg",
+      "/Images/Fusion/Fusion 2.jpg",
+      "/Images/Fusion/Fusion 3.jpg",
+      "/Images/Fusion/Fusion 4.jpg",
+      "/Images/Fusion/Fusion 5.jpg",
+      "/Images/Fusion/Fusion 6.jpg",
+      "/Images/Fusion/Fusion 7.jpg",
+      "/Images/Fusion/Fusion 8.jpg"
+    ]
+  },
+  {
+    "slug": "adaptiq",
+    "title": "AdaptIQ",
+    "subtitle": "A Nationwide Innovation Initiative",
+    "date": "October - November 2025",
+    "location": "Colombo, Galle, Kurunegala",
+    "participants": "100+ Participants",
+    "description": [
+      "AdaptIQ, organized by the IEEE Women in Engineering Student Branch Affinity Group of IIT, was a nationwide innovation challenge designed to empower the next generation of innovators and problem solvers.",
+      "The initiative began with three regional workshops held in Colombo, Galle, and Kurunegala, equipping participants with the knowledge, mentorship, and skills needed to transform their ideas into impactful solutions. The journey culminated in an exciting 24-hour finale, where teams collaborated, built, and presented innovative solutions to real-world challenges.",
+      "More than just a competition, AdaptIQ fostered creativity, teamwork, and innovation while inspiring young minds across Sri Lanka to develop technology-driven solutions that create meaningful change."
+    ],
+    "image": "/Images/Adaptiq/Adaptiq.jpg",
+    "gallery": [
+      "/Images/Adaptiq/Adaptiq 1.jpg",
+      "/Images/Adaptiq/Adaptiq 2.jpg",
+      "/Images/Adaptiq/Adaptiq 3.jpg",
+      "/Images/Adaptiq/Adaptiq 4.jpg",
+      "/Images/Adaptiq/Adaptiq 5.jpg",
+      "/Images/Adaptiq/Adaptiq 6.jpg",
+      "/Images/Adaptiq/Adaptiq 7.jpg",
+      "/Images/Adaptiq/Adaptiq 8.jpg"
+    ]
+  },
+  {
     "slug": "syncup",
     "title": "SyncUp",
     "subtitle": "The Power of Mentorship in Motion",

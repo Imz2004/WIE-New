@@ -28,10 +28,14 @@ export default function Header() {
     { name: "Contact Us", href: "/#contact" },
   ];
 
+  const isEventPage = pathname.startsWith("/events");
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
+        isEventPage
+          ? "bg-transparent py-5"
+          : isScrolled
           ? "glass shadow-lg py-3"
           : "bg-transparent py-5"
       }`}
