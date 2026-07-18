@@ -104,7 +104,7 @@ export default function OurTeam() {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group flex flex-col items-center glass backdrop-blur-xl bg-white/5 border border-white/10 p-6 rounded-3xl hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] transition-all duration-300 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-blue-500/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
       
       <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-6 border-4 border-muted group-hover:border-primary/50 transition-colors duration-300 shrink-0">
         <Image
@@ -130,7 +130,7 @@ export default function OurTeam() {
         </a>
         <a
           href={`mailto:${member.email}`}
-          className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-secondary hover:text-white transition-all hover:-translate-y-1"
+          className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"
         >
           <Mail size={18} />
         </a>
