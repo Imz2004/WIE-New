@@ -12,13 +12,41 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  const [activeSection, setActiveSection] = useState("home");
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      if (pathname === "/") {
+        const sections = ["about", "our-work", "contact"];
+        let current = "home";
+        
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            // A section is considered active if its top is above 1/3 of the viewport
+            // and its bottom is still within view
+            if (rect.top <= window.innerHeight / 3 && rect.bottom >= 0) {
+              current = section;
+            }
+          }
+        }
+        
+        // Catch the very bottom of the page for the last section
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+          current = "contact";
+        }
+        
+        setActiveSection(current);
+      }
     };
+    
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger once on mount
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -65,17 +93,26 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {navLinks.map((link) => {
+            let isActive = false;
+            if (pathname === "/") {
+              if (link.href === "/" && activeSection === "home") isActive = true;
+              else if (link.href === `/#${activeSection}`) isActive = true;
+            } else {
+              isActive = pathname === link.href;
+            }
+            
+            return (
             <Link
               key={link.name}
               href={link.href}
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname === link.href ? "text-primary" : "text-foreground"
+                isActive ? "text-primary" : "text-foreground"
               }`}
             >
               {link.name}
             </Link>
-          ))}
+          )})}
           <Link
             href="https://docs.google.com/forms/d/e/1FAIpQLSejHQ_xvdMFQAJx6kzegu04RKTDMbG6WigsT6z6ISbeyDq8iQ/viewform"
             target="_blank"
@@ -104,16 +141,27 @@ export default function Header() {
           className="md:hidden absolute top-full left-0 w-full glass border-b border-border shadow-lg"
         >
           <nav className="flex flex-col py-4 px-6 space-y-4">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              let isActive = false;
+              if (pathname === "/") {
+                if (link.href === "/" && activeSection === "home") isActive = true;
+                else if (link.href === `/#${activeSection}`) isActive = true;
+              } else {
+                isActive = pathname === link.href;
+              }
+              
+              return (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-base font-medium py-2 border-b border-border/50 text-foreground hover:text-primary"
+                className={`text-base font-medium py-2 border-b border-border/50 hover:text-primary ${
+                  isActive ? "text-primary" : "text-foreground"
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </Link>
-            ))}
+            )})}
             <Link
               href="https://docs.google.com/forms/d/e/1FAIpQLSejHQ_xvdMFQAJx6kzegu04RKTDMbG6WigsT6z6ISbeyDq8iQ/viewform"
               target="_blank"

@@ -2,10 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Users, Calendar, Award, Globe, BookOpen, Star, Target } from "lucide-react";
-
 export default function Home() {
+  const timelineRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start center", "end center"]
+  });
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -229,7 +234,7 @@ export default function Home() {
             <motion.div 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               variants={fadeInUp}
               className="w-full lg:w-5/12 space-y-6 lg:sticky lg:top-32 h-fit"
             >
@@ -246,18 +251,30 @@ export default function Home() {
               </div>
             </motion.div>
             
-            <div className="w-full lg:w-7/12 relative">
-              <div className="absolute left-[15px] md:left-[27px] top-4 bottom-4 w-px bg-border/50 hidden sm:block" />
+            <div className="w-full lg:w-7/12 relative" ref={timelineRef}>
+              {/* Background line */}
+              <div className="absolute left-[15px] md:left-[27px] top-4 bottom-4 w-[2px] bg-border/30 hidden sm:block" />
+              {/* Animated foreground line */}
+              <motion.div 
+                className="absolute left-[15px] md:left-[27px] top-4 bottom-4 w-[2px] bg-primary hidden sm:block origin-top z-0" 
+                style={{ scaleY: scrollYProgress }} 
+              />
               <div className="space-y-16">
                 {/* Timeline Item 1 */}
                 <motion.div 
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  viewport={{ once: false, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
-                  <div className="absolute left-0 sm:left-[11px] md:left-[23px] top-2 w-2 h-2 rounded-full bg-white hidden sm:block" />
+                  <motion.div 
+                    initial={{ backgroundColor: "rgba(255,255,255,0.2)", scale: 0.8 }}
+                    whileInView={{ backgroundColor: "#8b5cf6", scale: 1.2 }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute left-[-2px] sm:left-[10px] md:left-[22px] top-[10px] w-3 h-3 rounded-full hidden sm:block z-10" 
+                  />
                   <div className="flex-1">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase mb-2 block">Pillar 01 / Educate</span>
                     <h4 className="text-2xl font-bold mb-3">Workshops & Sessions</h4>
@@ -272,11 +289,17 @@ export default function Home() {
                 <motion.div 
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  viewport={{ once: false, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
-                  <div className="absolute left-0 sm:left-[11px] md:left-[23px] top-2 w-2 h-2 rounded-full bg-white hidden sm:block" />
+                  <motion.div 
+                    initial={{ backgroundColor: "rgba(255,255,255,0.2)", scale: 0.8 }}
+                    whileInView={{ backgroundColor: "#8b5cf6", scale: 1.2 }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute left-[-2px] sm:left-[10px] md:left-[22px] top-[10px] w-3 h-3 rounded-full hidden sm:block z-10" 
+                  />
                   <div className="flex-1">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase mb-2 block">Pillar 02 / Empower</span>
                     <h4 className="text-2xl font-bold mb-3">Hackathons & Challenges</h4>
@@ -291,11 +314,17 @@ export default function Home() {
                 <motion.div 
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  viewport={{ once: false, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
-                  <div className="absolute left-0 sm:left-[11px] md:left-[23px] top-2 w-2 h-2 rounded-full bg-white hidden sm:block" />
+                  <motion.div 
+                    initial={{ backgroundColor: "rgba(255,255,255,0.2)", scale: 0.8 }}
+                    whileInView={{ backgroundColor: "#8b5cf6", scale: 1.2 }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute left-[-2px] sm:left-[10px] md:left-[22px] top-[10px] w-3 h-3 rounded-full hidden sm:block z-10" 
+                  />
                   <div className="flex-1">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase mb-2 block">Pillar 03 / Excel</span>
                     <h4 className="text-2xl font-bold mb-3">Outreach & Mentorship</h4>

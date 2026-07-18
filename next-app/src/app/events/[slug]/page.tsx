@@ -28,7 +28,7 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
 
   return (
     <main className="min-h-screen bg-[#030207] text-purple-50 overflow-hidden font-sans relative">
-      <div className="absolute top-0 left-0 w-full h-[150vh] overflow-hidden pointer-events-none z-0">
+      <div className="absolute top-0 left-0 w-full h-[150vh] overflow-hidden pointer-events-none z-0 [mask-image:linear-gradient(to_bottom,white_60%,transparent_100%)]">
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-purple-600/20 blur-[120px] rounded-full" />
         <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[200vw] h-[200vw] md:w-[150vw] md:h-[150vw] rounded-[100%] bg-gradient-to-b from-[#1a0830] to-[#030207] border-t border-purple-900/50 shadow-[0_0_100px_rgba(139,92,246,0.15)_inset]" />
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '50px 50px', opacity: 0.1 }} />
