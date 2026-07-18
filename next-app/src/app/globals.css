@@ -38,7 +38,10 @@ body {
   background-color: #030207;
   background-image: 
     radial-gradient(circle at 50% 50%, rgba(26, 8, 48, 0.45) 0%, #030207 100%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='208' viewBox='0 0 120 208'%3E%3Cpolygon points='0,0 60,0 30,52' fill='%236b21a8' opacity='0.40'/%3E%3Cpolygon points='60,0 120,0 90,52' fill='%237e22ce' opacity='0.30'/%3E%3Cpolygon points='30,52 90,52 60,0' fill='%23581c87' opacity='0.45'/%3E%3Cpolygon points='0,0 30,52 0,52' fill='%234c1d95' opacity='0.25'/%3E%3Cpolygon points='120,0 90,52 120,52' fill='%234c1d95' opacity='0.25'/%3E%3Cpolygon points='30,52 0,104 60,104' fill='%233b0764' opacity='0.35'/%3E%3Cpolygon points='90,52 60,104 120,104' fill='%23581c87' opacity='0.40'/%3E%3Cpolygon points='30,52 90,52 60,104' fill='%237e22ce' opacity='0.30'/%3E%3Cpolygon points='0,52 30,52 0,104' fill='%234c1d95' opacity='0.40'/%3E%3Cpolygon points='120,52 90,52 120,104' fill='%234c1d95' opacity='0.40'/%3E%3Cpolygon points='0,104 60,104 30,156' fill='%237e22ce' opacity='0.30'/%3E%3Cpolygon points='60,104 120,104 90,156' fill='%236b21a8' opacity='0.40'/%3E%3Cpolygon points='30,156 90,156 60,104' fill='%23581c87' opacity='0.40'/%3E%3Cpolygon points='0,104 30,156 0,156' fill='%233b0764' opacity='0.25'/%3E%3Cpolygon points='120,104 90,156 120,156' fill='%233b0764' opacity='0.25'/%3E%3Cpolygon points='30,156 0,208 60,208' fill='%234c1d95' opacity='0.40'/%3E%3Cpolygon points='90,156 60,208 120,208' fill='%23581c87' opacity='0.35'/%3E%3Cpolygon points='30,156 90,156 60,208' fill='%236b21a8' opacity='0.30'/%3E%3Cpolygon points='0,156 30,156 0,208' fill='%237e22ce' opacity='0.35'/%3E%3Cpolygon points='120,156 90,156 120,208' fill='%237e22ce' opacity='0.35'/%3E%3C/svg%3E");
+    url("/bg-abstract.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;

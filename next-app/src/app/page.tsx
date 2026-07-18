@@ -132,7 +132,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[100vh] flex flex-col justify-between pt-32 pb-10 overflow-hidden">
         {/* Background Image & Overlay */}
-        <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 z-0"
+          style={{ maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)" }}
+        >
           <Image
             src="/Images/bgphoto.jpg"
             alt="Hero Background"
@@ -425,7 +428,10 @@ export default function Home() {
       {/* Contact Section (Footer Join Us Overlay) */}
       <section id="contact" className="relative py-32 lg:py-48 overflow-hidden border-t border-border/30">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 z-0"
+          style={{ maskImage: "linear-gradient(to top, black 70%, transparent 100%)", WebkitMaskImage: "linear-gradient(to top, black 70%, transparent 100%)" }}
+        >
           <Image
             src="/Images/aboutus image.jpg"
             alt="About Us Background"
@@ -440,10 +446,10 @@ export default function Home() {
         <div className="container px-4 md:px-6 mx-auto relative z-10">
           <div className="max-w-md">
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, margin: "-50px" }}
+              transition={{ duration: 0.7, type: "spring", bounce: 0.4 }}
               className="glass p-8 md:p-10 rounded-2xl border-white/10 shadow-2xl backdrop-blur-xl"
             >
               <h3 className="text-3xl font-bold text-white mb-2">Want to join us,</h3>
