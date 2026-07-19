@@ -55,7 +55,7 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
                className="hidden lg:block absolute w-64 h-40 xl:w-80 xl:h-48 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-purple-600/30 z-10"
                style={{ ...pos }}
              >
-               <Image src={src} alt="" fill className="object-cover transition-transform duration-700 hover:scale-110" unoptimized />
+               <Image src={src} alt="" fill className="object-cover object-[center_30%] transition-transform duration-700 hover:scale-110" unoptimized />
                <div className="absolute inset-0 bg-purple-900/20 mix-blend-overlay pointer-events-none" />
              </motion.div>
            )
@@ -127,7 +127,7 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
                 transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
                 className="relative aspect-video rounded-xl overflow-hidden group shadow-lg border border-purple-700/50"
               >
-                <Image src={src} alt={`Highlight ${idx}`} fill className="object-cover transition-transform duration-700 group-hover:scale-110" unoptimized />
+                <Image src={src} alt={`Highlight ${idx}`} fill className="object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-110" unoptimized />
                 <div className="absolute inset-0 bg-purple-900/30 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
             ))}

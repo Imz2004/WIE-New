@@ -1,5 +1,28 @@
 export const events = [
   {
+    "slug": "weave-and-worth",
+    "title": "Weave & Worth",
+    "subtitle": "Inspiring Roundtable Discussion",
+    "date": "June 13, 2026",
+    "location": "IIT GP Square Auditorium",
+    "participants": "Aspiring Female Professionals",
+    "description": [
+      "The IEEE Women in Engineering (WIE) Affinity Group of the Informatics Institute of Technology (IIT) successfully hosted Weave & Worth on 13th June 2026 at the IIT GP Square Auditorium. The roundtable discussion featured Ms. Asma Cader, Marketing Director, as the guest speaker, who shared her inspiring life journey and professional experiences with the audience. Centered around confidence, personal branding, and navigating the modern workplace, the session encouraged meaningful conversations and active participation.",
+      "Drawing from her own career journey, Ms. Cader shared valuable lessons on resilience, self-confidence, and embracing opportunities for growth. Her authentic stories and practical advice inspired attendees to build their personal brands with purpose while staying true to themselves. The interactive discussion gave participants the opportunity to ask questions, exchange perspectives, and leave feeling motivated and better prepared for their future careers."
+    ],
+    "image": "/Images/WeavenWorth/WW.png",
+    "gallery": [
+      "/Images/WeavenWorth/WW 1.png",
+      "/Images/WeavenWorth/WW 2.png",
+      "/Images/WeavenWorth/WW 3.png",
+      "/Images/WeavenWorth/WW 4.png",
+      "/Images/WeavenWorth/WW 5.png",
+      "/Images/WeavenWorth/WW 6.png",
+      "/Images/WeavenWorth/WW 7.png",
+      "/Images/WeavenWorth/WW 8.png"
+    ]
+  },
+  {
     "slug": "sherlock-3",
     "title": "SHErlock 3.0",
     "subtitle": "The Ultimate Problem-Solving Challenge",
