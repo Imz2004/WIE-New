@@ -10,7 +10,7 @@ export default function OurTeam() {
     {
       name: "Ganguli Hettiarachchi",
       role: "Chairperson",
-      image: "/Images/TeamPhotoes/Ganguli.png",
+      image: "/Images/TeamPhotoes/ganguli.png",
       linkedin: "https://www.linkedin.com/in/lohansa-munasinghe-5691961b5/",
       email: "ganguli.20231948@iit.ac.lk",
     },
@@ -83,7 +83,7 @@ export default function OurTeam() {
     {
       name: "Vishara Jayalath",
       role: "Design Lead",
-      image: "/Images/TeamPhotoes/Vishara.png",
+      image: "/Images/TeamPhotoes/vishara.png",
       linkedin: "http://www.linkedin.com/in/vishara-jayalath",
       email: "nethmi.20240814@iit.ac.lk",
     },
