@@ -5,7 +5,7 @@ import Link from "next/link";
 import InitiativesCarousel from "@/components/InitiativesCarousel";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Users, Calendar, Award, Globe, BookOpen, Star, Target, Handshake, Trophy, MapPin, Mail, Linkedin, Instagram } from "lucide-react";
+import { ArrowRight, Users, Calendar, Award, Globe, BookOpen, Star, Target, Handshake, Trophy } from "lucide-react";
 export default function Home() {
   const timelineRef = useRef(null);
   const { scrollYProgress } = useScroll({
