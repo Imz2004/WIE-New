@@ -103,7 +103,7 @@ function CarouselCard({ item, idx, dragX, numItems }: any) {
   // from the continuous drag position.
 
   // 1. Calculate the angle for this specific card
-  const angle = useTransform(dragX, (x) => {
+  const angle = useTransform(dragX, (x: number) => {
     // When dragX is positive (dragged right), the carousel spins right.
     const globalOffset = (x / ITEM_WIDTH);
     const localOffset = globalOffset + idx;
@@ -111,13 +111,13 @@ function CarouselCard({ item, idx, dragX, numItems }: any) {
   });
 
   // 2. Map angle to depth (cos) and horizontal position (sin)
-  const depth = useTransform(angle, (a) => Math.cos(a)); // 1 is front, -1 is back
-  const horizontal = useTransform(angle, (a) => Math.sin(a)); // 1 is right, -1 is left
+  const depth = useTransform(angle, (a: number) => Math.cos(a)); // 1 is front, -1 is back
+  const horizontal = useTransform(angle, (a: number) => Math.sin(a)); // 1 is right, -1 is left
 
   // 3. Derive scale, opacity, and zIndex from depth
-  const scale = useTransform(depth, (d) => 0.7 + 0.3 * d); // 0.4 at back, 1.0 at front
-  const opacity = useTransform(depth, (d) => Math.max(0, 0.3 + 0.7 * d)); // -0.4 to 1.0
-  const zIndex = useTransform(depth, (d) => Math.round(d * 100));
+  const scale = useTransform(depth, (d: number) => 0.7 + 0.3 * d); // 0.4 at back, 1.0 at front
+  const opacity = useTransform(depth, (d: number) => Math.max(0, 0.3 + 0.7 * d)); // -0.4 to 1.0
+  const zIndex = useTransform(depth, (d: number) => Math.round(d * 100));
 
   // 4. Calculate X translation. 
   // IMPORTANT: We subtract dragX to cancel out the physical movement of the parent container,
