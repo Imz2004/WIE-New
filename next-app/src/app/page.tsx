@@ -57,11 +57,11 @@ export default function Home() {
 
   const allEvents = [
     {
-      title: "SHElock 3.0",
-      date: "February 07, 2026",
-      description: "The event brought a thrilling challenge to undergraduates across Sri Lanka, fostering problem-solving, strategic thinking, and teamwork.",
-      image: "/Images/SHErlock 3.0/sherlock3.0.jpg",
-      link: "/events/sherlock-3",
+      title: "Weave & Worth",
+      date: "June 13, 2026",
+      description: "Weave & Worth was an inspiring roundtable discussion conducted for women on confidence, personal branding, and navigating the modern workplace.",
+      image: "/Images/WeavenWorth/WW.png",
+      link: "/events/weave-and-worth",
     },
     {
       title: "Becoming",
@@ -69,6 +69,13 @@ export default function Home() {
       description: "Becoming was an inspiring Women’s Day session where Dr. Dilhari Attygalle shared real, unspoken lessons from her journey as a woman in tech and leadership.",
       image: "/Images/Becoming/becoming.jpg",
       link: "/events/becoming",
+    },
+    {
+      title: "SHElock 3.0",
+      date: "February 07, 2026",
+      description: "The event brought a thrilling challenge to undergraduates across Sri Lanka, fostering problem-solving, strategic thinking, and teamwork.",
+      image: "/Images/SHErlock 3.0/sherlock3.0.jpg",
+      link: "/events/sherlock-3",
     },
     {
       title: "FUSION",
