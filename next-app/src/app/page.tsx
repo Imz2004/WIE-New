@@ -5,7 +5,7 @@ import Link from "next/link";
 import InitiativesCarousel from "@/components/InitiativesCarousel";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Users, Calendar, Award, Globe, BookOpen, Star, Target } from "lucide-react";
+import { ArrowRight, Users, Calendar, Award, Globe, BookOpen, Star, Target, Handshake, Trophy, MapPin, Mail, Linkedin, Instagram } from "lucide-react";
 export default function Home() {
   const timelineRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -52,6 +52,21 @@ export default function Home() {
       title: "Global Network",
       description: "Become part of the world's largest professional network for women in tech.",
       icon: Globe,
+    },
+    {
+      title: "Recognition & Awards",
+      description: "Celebrate your achievements through certificates, leadership recognition, competitions, and volunteer appreciation.",
+      icon: Trophy,
+    },
+    {
+      title: "Women in STEM Empowerment",
+      description: "Be part of a supportive community that empowers women to lead, innovate, and excel in technology and engineering.",
+      icon: Target,
+    },
+    {
+      title: "Volunteer Experience",
+      description: "Contribute to impactful events and initiatives while gaining valuable experience in organizing, leadership, and collaboration.",
+      icon: Handshake,
     },
   ];
 
