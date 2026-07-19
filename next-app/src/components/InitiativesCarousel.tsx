@@ -26,8 +26,8 @@ export default function InitiativesCarousel({ initiatives }: InitiativesCarousel
   };
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto h-[400px] md:h-[450px] flex flex-col items-center justify-center overflow-hidden">
-      <div className="relative w-full h-[300px] md:h-[350px] flex items-center justify-center">
+    <div className="relative w-full max-w-6xl mx-auto h-[450px] md:h-[550px] flex flex-col items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center">
         <AnimatePresence>
           {initiatives.map((item, idx) => {
             // Calculate relative position based on distance from active index
@@ -64,7 +64,7 @@ export default function InitiativesCarousel({ initiatives }: InitiativesCarousel
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
                 onDragEnd={handleDragEnd}
-                className={`absolute w-full max-w-[280px] md:max-w-[320px] bg-zinc-900/60 backdrop-blur-xl border rounded-2xl p-8 shadow-xl transition-colors duration-300 ${
+                className={`absolute w-full max-w-[320px] md:max-w-[400px] bg-zinc-900/60 backdrop-blur-xl border rounded-2xl p-10 shadow-xl transition-colors duration-300 ${
                   isActive ? "shadow-[0_0_30px_rgba(139,92,246,0.3)] border-purple-500/60 bg-zinc-900/90" : "shadow-none border-white/10"
                 }`}
                 style={{
