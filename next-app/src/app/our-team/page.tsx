@@ -105,7 +105,7 @@ export default function OurTeam() {
       className="group flex flex-col items-center glass backdrop-blur-xl bg-muted border border-border p-6 rounded-3xl hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] transition-all duration-300 relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-blue-500/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-      
+
       <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-6 border-4 border-muted group-hover:border-primary/50 transition-colors duration-300 shrink-0">
         <Image
           src={member.image}
@@ -115,10 +115,10 @@ export default function OurTeam() {
           unoptimized
         />
       </div>
-      
+
       <h3 className="text-xl font-bold mb-1 text-center text-foreground">{member.name}</h3>
       <p className="text-primary font-medium text-sm text-center mb-6">{member.role}</p>
-      
+
       <div className="flex gap-4 mt-auto relative z-10">
         <a
           href={member.linkedin}
@@ -168,7 +168,7 @@ export default function OurTeam() {
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
             </h2>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
             {excoMembers.map((member, index) => (
               <div key={member.name} className="w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.33rem)] max-w-sm">
@@ -188,7 +188,7 @@ export default function OurTeam() {
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
             </h2>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
             {standingCommittee.map((member, index) => (
               <div key={member.name} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] xl:w-[calc(25%-1.5rem)] max-w-sm">

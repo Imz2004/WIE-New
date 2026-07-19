@@ -249,9 +249,42 @@ export default function Home() {
               variants={fadeInUp}
               className="w-full lg:w-5/12 space-y-6 lg:sticky lg:top-32 h-fit"
             >
-              <h3 className="text-3xl md:text-4xl font-bold leading-tight">
-                Empowering Women in <br/><span className="text-primary italic font-serif">Technology</span>
-              </h3>
+              <motion.h3 
+                className="text-3xl md:text-4xl font-bold leading-tight"
+                variants={{
+                  hidden: { opacity: 1 },
+                  visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.04 }
+                  }
+                }}
+              >
+                {"Empowering Women in ".split("").map((char, index) => (
+                  <motion.span
+                    key={`t1-${index}`}
+                    variants={{
+                      hidden: { opacity: 0 },
+                      visible: { opacity: 1 }
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+                <br/>
+                <span className="text-primary italic font-serif">
+                  {"Technology".split("").map((char, index) => (
+                    <motion.span
+                      key={`t2-${index}`}
+                      variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1 }
+                      }}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </span>
+              </motion.h3>
               <div className="space-y-4 text-muted-foreground text-lg leading-relaxed pt-4">
                 <p>
                   IEEE Women in Engineering (WIE) at IIT is a dynamic student-led organization committed to empowering women in technology, engineering, and STEM fields. As part of the global IEEE WIE community, we aim to foster an inclusive environment where students can grow, innovate, and lead.
