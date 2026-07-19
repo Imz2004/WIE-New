@@ -443,7 +443,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: false, margin: "-50px" }}
               transition={{ duration: 0.7, type: "spring", bounce: 0.4 }}
-              className="glass p-8 md:p-10 rounded-2xl border-border shadow-2xl backdrop-blur-xl"
+              className="bg-zinc-950/60 p-8 md:p-10 rounded-2xl border border-purple-500/30 shadow-2xl backdrop-blur-xl relative overflow-hidden"
             >
               <h3 className="text-3xl font-bold text-foreground mb-2">Want to join us,</h3>
               <h4 className="text-xl text-muted-foreground font-light mb-8">but still have questions?</h4>
