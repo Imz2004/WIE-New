@@ -86,8 +86,8 @@ export default function Home() {
       link: "/events/becoming",
     },
     {
-      title: "SHElock 3.0",
-      date: "February 07, 2026",
+      title: "SHErlock 3.0",
+      date: "February 7, 2026",
       description: "The event brought a thrilling challenge to undergraduates across Sri Lanka, fostering problem-solving, strategic thinking, and teamwork.",
       image: "/Images/SHErlock 3.0/sherlock3.0.jpg",
       link: "/events/sherlock-3",
@@ -108,7 +108,7 @@ export default function Home() {
     },
     {
       title: "SyncUp",
-      date: "March 27, 2025",
+      date: "August 8, 2025",
       description: "An inspiring journey of mentorship, growth, and connection bringing 150+ students together through keynotes, activities, and 1:1 guidance.",
       image: "/Images/SyncUp/Syncuphomepage.jpg",
       link: "/events/syncup",
@@ -128,8 +128,8 @@ export default function Home() {
       link: "/events/wso2-visit",
     },
     {
-      title: "SHElock 2.0",
-      date: "February 08, 2025",
+      title: "SHErlock 2.0",
+      date: "March 27, 2025",
       description: "The event brought a thrilling challenge to undergraduates across Sri Lanka, fostering problem-solving, strategic thinking, and teamwork.",
       image: "/Images/Sherlock2.0.jpg",
       link: "/events/sherlock-2",

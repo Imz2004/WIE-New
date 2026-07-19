@@ -177,7 +177,7 @@ export const events = [
     "slug": "sherlock-2",
     "title": "SHErlock 2.0",
     "subtitle": "The Ultimate Problem-Solving Challenge",
-    "date": "February 8, 2025",
+    "date": "March 27, 2025",
     "location": "IIT Campus",
     "participants": "100+ Participants",
     "description": [
