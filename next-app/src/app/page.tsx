@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import InitiativesCarousel from "@/components/InitiativesCarousel";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Users, Calendar, Award, Globe, BookOpen, Star, Target } from "lucide-react";
@@ -164,7 +165,7 @@ export default function Home() {
           >
             <motion.h1 
               variants={fadeInUp}
-              className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-white drop-shadow-lg"
+              className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-foreground drop-shadow-lg"
             >
               IEEE Women In Engineering <br className="hidden md:block" /> 
               <span className="text-primary font-light">Affinity Group of IIT</span>
@@ -172,7 +173,7 @@ export default function Home() {
             
             <motion.p 
               variants={fadeInUp}
-              className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
+              className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
             >
               Join the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. Empowering women in STEM.
             </motion.p>
@@ -185,13 +186,13 @@ export default function Home() {
                 href="https://docs.google.com/forms/d/e/1FAIpQLSejHQ_xvdMFQAJx6kzegu04RKTDMbG6WigsT6z6ISbeyDq8iQ/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3.5 text-base font-semibold text-white bg-primary rounded-md transition-all hover:bg-primary/80 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] border border-primary"
+                className="px-8 py-3.5 text-base font-semibold text-foreground bg-primary rounded-md transition-all hover:bg-primary/80 hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] border border-primary"
               >
                 Become a Volunteer
               </Link>
               <Link
                 href="#about"
-                className="px-8 py-3.5 text-base font-semibold text-white bg-black/30 backdrop-blur-md rounded-md transition-all hover:bg-white/10 border border-white/20"
+                className="px-8 py-3.5 text-base font-semibold text-foreground bg-card backdrop-blur-md rounded-md transition-all hover:bg-muted border border-border"
               >
                 Learn More
               </Link>
@@ -210,11 +211,11 @@ export default function Home() {
             {highlightCards.map((card, idx) => (
               <div 
                 key={idx} 
-                className="glass rounded-xl p-4 md:p-5 flex-1 min-w-[140px] max-w-[200px] flex flex-col items-center justify-center text-center border border-white/10 hover:border-primary/50 transition-colors"
+                className="glass rounded-xl p-4 md:p-5 flex-1 min-w-[140px] max-w-[200px] flex flex-col items-center justify-center text-center border border-border hover:border-primary/50 transition-colors"
               >
                 <card.icon className="w-6 h-6 text-primary mb-3 opacity-80" />
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{card.value}</h3>
-                <p className="text-xs md:text-sm text-gray-400 font-medium">{card.label}</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-1">{card.value}</h3>
+                <p className="text-xs md:text-sm text-muted-foreground font-medium">{card.label}</p>
               </div>
             ))}
           </motion.div>
@@ -283,7 +284,7 @@ export default function Home() {
                     <h4 className="text-2xl font-bold mb-3">Workshops & Sessions</h4>
                     <p className="text-muted-foreground">Interactive technical training, career insight sessions, and expert-led panels that build foundational and advanced skills.</p>
                   </div>
-                  <div className="w-full md:w-48 h-32 relative rounded-lg overflow-hidden border border-white/10 shrink-0">
+                  <div className="w-full md:w-48 h-32 relative rounded-lg overflow-hidden border border-border shrink-0">
                     <Image src="/Images/Becoming/becoming.jpg" alt="Educate" fill className="object-cover" unoptimized />
                   </div>
                 </motion.div>
@@ -308,7 +309,7 @@ export default function Home() {
                     <h4 className="text-2xl font-bold mb-3">Hackathons & Challenges</h4>
                     <p className="text-muted-foreground">Thrilling competitions like SHErlock that challenge students with immersive puzzles, coding problems, and real-world scenarios.</p>
                   </div>
-                  <div className="w-full md:w-48 h-32 relative rounded-lg overflow-hidden border border-white/10 shrink-0">
+                  <div className="w-full md:w-48 h-32 relative rounded-lg overflow-hidden border border-border shrink-0">
                     <Image src="/Images/SHElock3.0.jpg" alt="Empower" fill className="object-cover" unoptimized />
                   </div>
                 </motion.div>
@@ -333,7 +334,7 @@ export default function Home() {
                     <h4 className="text-2xl font-bold mb-3">Outreach & Mentorship</h4>
                     <p className="text-muted-foreground">Mentoring young minds and giving back to the community through school outreach programs and industry collaborations.</p>
                   </div>
-                  <div className="w-full md:w-48 h-32 relative rounded-lg overflow-hidden border border-white/10 shrink-0">
+                  <div className="w-full md:w-48 h-32 relative rounded-lg overflow-hidden border border-border shrink-0">
                     <Image src="/Images/SyncUp/Syncuphomepage.jpg" alt="Excel" fill className="object-cover" unoptimized />
                   </div>
                 </motion.div>
@@ -355,22 +356,7 @@ export default function Home() {
             <div className="h-px bg-border flex-grow max-w-[100px]" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {initiatives.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="bg-background border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-colors group"
-              >
-                <item.icon className="w-8 h-8 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                <h4 className="text-xl font-bold mb-3">{item.title}</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          <InitiativesCarousel initiatives={initiatives} />
         </div>
       </section>
 
@@ -394,9 +380,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative backdrop-blur-xl bg-white/5 border border-white/20 rounded-2xl overflow-hidden hover:shadow-[0_0_25px_rgba(139,92,246,0.3)] hover:-translate-y-2 hover:border-primary/60 transition-all duration-500 flex flex-col"
+                className="group relative backdrop-blur-xl bg-muted border border-border rounded-2xl overflow-hidden hover:shadow-[0_0_25px_rgba(139,92,246,0.3)] hover:-translate-y-2 hover:border-primary/60 transition-all duration-500 flex flex-col"
               >
-                <div className="relative h-60 w-full overflow-hidden shrink-0 border-b border-white/10">
+                <div className="relative h-60 w-full overflow-hidden shrink-0 border-b border-border">
                   <Image
                     src={event.image}
                     alt={event.title}
@@ -408,13 +394,13 @@ export default function Home() {
                 </div>
                 <div className="p-6 flex flex-col flex-grow relative">
                   <div className="text-xs tracking-wider text-primary font-bold uppercase mb-2">{event.date}</div>
-                  <h3 className="text-2xl font-bold mb-3 text-white">{event.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-4 flex-grow">
+                  <h3 className="text-2xl font-bold mb-3 text-foreground">{event.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-4 flex-grow">
                     {event.description}
                   </p>
                   <Link
                     href={event.link}
-                    className="inline-flex items-center text-sm font-semibold text-white/80 hover:text-white transition-colors mt-auto group/btn"
+                    className="inline-flex items-center text-sm font-semibold text-foreground/80 hover:text-foreground transition-colors mt-auto group/btn"
                   >
                     Read More <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
@@ -450,31 +436,31 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: false, margin: "-50px" }}
               transition={{ duration: 0.7, type: "spring", bounce: 0.4 }}
-              className="glass p-8 md:p-10 rounded-2xl border-white/10 shadow-2xl backdrop-blur-xl"
+              className="glass p-8 md:p-10 rounded-2xl border-border shadow-2xl backdrop-blur-xl"
             >
-              <h3 className="text-3xl font-bold text-white mb-2">Want to join us,</h3>
-              <h4 className="text-xl text-gray-300 font-light mb-8">but still have questions?</h4>
+              <h3 className="text-3xl font-bold text-foreground mb-2">Want to join us,</h3>
+              <h4 className="text-xl text-muted-foreground font-light mb-8">but still have questions?</h4>
 
               <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                 <div>
                   <input 
                     type="text" 
                     placeholder="Leave a request or comment" 
-                    className="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-border pb-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
                   />
                 </div>
                 <div>
                   <input 
                     type="text" 
                     placeholder="Your name" 
-                    className="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-border pb-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
                   />
                 </div>
                 <div>
                   <input 
                     type="email" 
                     placeholder="Email address" 
-                    className="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder:text-gray-400 focus:outline-none focus:border-primary transition-colors text-sm"
+                    className="w-full bg-transparent border-b border-border pb-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
                   />
                 </div>
                 <button 

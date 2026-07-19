@@ -117,7 +117,7 @@ export default function Header() {
             href="https://docs.google.com/forms/d/e/1FAIpQLSejHQ_xvdMFQAJx6kzegu04RKTDMbG6WigsT6z6ISbeyDq8iQ/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 text-sm font-medium text-white bg-primary hover:bg-primary/90 rounded-full transition-all hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] active:scale-95"
+            className="px-5 py-2.5 text-sm font-medium text-foreground bg-primary hover:bg-primary/90 rounded-full transition-all hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] active:scale-95"
           >
             Volunteer
           </Link>
@@ -166,7 +166,7 @@ export default function Header() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSejHQ_xvdMFQAJx6kzegu04RKTDMbG6WigsT6z6ISbeyDq8iQ/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 px-5 py-3 text-center font-medium text-white bg-primary rounded-lg transition-colors"
+              className="mt-4 px-5 py-3 text-center font-medium text-foreground bg-primary rounded-lg transition-colors"
             >
               Become a Volunteer
             </Link>

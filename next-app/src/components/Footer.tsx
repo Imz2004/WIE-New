@@ -34,7 +34,7 @@ export default function Footer() {
               href="https://www.facebook.com/share/14DNsp2yrmi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all hover:-translate-y-1"
+              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-foreground transition-all hover:-translate-y-1"
             >
               <FaFacebookF size={20} />
             </a>
@@ -42,7 +42,7 @@ export default function Footer() {
               href="https://www.instagram.com/ieeewieiit?igsh=MWpwdHR6c2ZhNzVzaA=="
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-white transition-all hover:-translate-y-1"
+              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-all hover:-translate-y-1"
             >
               <FaInstagram size={20} />
             </a>
@@ -50,7 +50,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/wie-affinity-group-of-iit/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-[#0A66C2] hover:text-white transition-all hover:-translate-y-1"
+              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-[#0A66C2] hover:text-foreground transition-all hover:-translate-y-1"
             >
               <FaLinkedinIn size={20} />
             </a>

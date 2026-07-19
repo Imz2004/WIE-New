@@ -94,7 +94,7 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             >
-                <Link href="#details" className="inline-block text-purple-400 hover:text-white transition-colors duration-300">
+                <Link href="#details" className="inline-block text-purple-400 hover:text-foreground transition-colors duration-300">
                     <p className="mb-2 font-medium tracking-widest uppercase text-sm">Explore Details</p>
                     <svg className="w-6 h-6 mx-auto animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                 </Link>
@@ -136,7 +136,7 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
       )}
 
       <div className="text-center pb-24 pt-12 relative z-10">
-        <Link href="/#our-work" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-900/40 hover:bg-purple-900/60 text-white font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 border border-purple-800/50">
+        <Link href="/#our-work" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-purple-900/40 hover:bg-purple-900/60 text-foreground font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 border border-purple-800/50">
           &larr; Back to Events
         </Link>
       </div>

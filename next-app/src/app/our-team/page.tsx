@@ -102,7 +102,7 @@ export default function OurTeam() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group flex flex-col items-center glass backdrop-blur-xl bg-white/5 border border-white/10 p-6 rounded-3xl hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] transition-all duration-300 relative overflow-hidden"
+      className="group flex flex-col items-center glass backdrop-blur-xl bg-muted border border-border p-6 rounded-3xl hover:border-primary/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] transition-all duration-300 relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-blue-500/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
       
@@ -116,7 +116,7 @@ export default function OurTeam() {
         />
       </div>
       
-      <h3 className="text-xl font-bold mb-1 text-center text-white">{member.name}</h3>
+      <h3 className="text-xl font-bold mb-1 text-center text-foreground">{member.name}</h3>
       <p className="text-primary font-medium text-sm text-center mb-6">{member.role}</p>
       
       <div className="flex gap-4 mt-auto relative z-10">
@@ -124,13 +124,13 @@ export default function OurTeam() {
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-[#0A66C2] hover:text-white transition-all hover:-translate-y-1"
+          className="w-10 h-10 rounded-full bg-muted border border-border flex items-center justify-center text-muted-foreground hover:bg-[#0A66C2] hover:text-foreground transition-all hover:-translate-y-1"
         >
           <FaLinkedinIn size={18} />
         </a>
         <a
           href={`mailto:${member.email}`}
-          className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:bg-primary hover:text-white transition-all hover:-translate-y-1"
+          className="w-10 h-10 rounded-full bg-muted border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-foreground transition-all hover:-translate-y-1"
         >
           <Mail size={18} />
         </a>
@@ -149,10 +149,10 @@ export default function OurTeam() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white drop-shadow-md">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground drop-shadow-md">
               Our <span className="text-primary italic font-serif lowercase">Team</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed drop-shadow-md">
               Meet the dedicated student leaders behind IEEE Women In Engineering Affinity Group of IIT.
             </p>
           </motion.div>
@@ -163,7 +163,7 @@ export default function OurTeam() {
       <section className="py-16 relative z-10">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold inline-block relative text-white">
+            <h2 className="text-3xl md:text-4xl font-bold inline-block relative text-foreground">
               Executive Committee
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
             </h2>
@@ -183,7 +183,7 @@ export default function OurTeam() {
       <section className="py-16 md:py-24 relative z-10">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold inline-block relative text-white">
+            <h2 className="text-3xl md:text-4xl font-bold inline-block relative text-foreground">
               Standing Committee Leads
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
             </h2>
