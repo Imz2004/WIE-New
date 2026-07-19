@@ -66,7 +66,7 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl md:text-8xl font-extrabold tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-purple-400 drop-shadow-2xl"
+            className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-purple-400 drop-shadow-2xl"
             >
             {event.title}
             </motion.h1>
