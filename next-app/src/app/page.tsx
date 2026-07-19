@@ -140,7 +140,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[100vh] flex flex-col justify-between pt-32 pb-10 overflow-hidden">
         {/* Background Image & Overlay */}
-        <div 
+        <div
           className="absolute inset-0 z-0"
           style={{ maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)" }}
         >
@@ -170,22 +170,22 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
-            <motion.h1 
+            <motion.h1
               variants={fadeInUp}
               className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-foreground drop-shadow-lg"
             >
-              IEEE Women In Engineering <br className="hidden md:block" /> 
+              IEEE Women In Engineering <br className="hidden md:block" />
               <span className="text-primary font-light">Affinity Group of IIT</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               variants={fadeInUp}
               className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
             >
               Join the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. Empowering women in STEM.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               variants={fadeInUp}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
@@ -209,15 +209,15 @@ export default function Home() {
 
         {/* Highlight Cards (Bottom of Hero) */}
         <div className="container px-4 md:px-6 mx-auto relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
             className="flex flex-wrap md:flex-nowrap gap-4 justify-center"
           >
             {highlightCards.map((card, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="glass rounded-xl p-4 md:p-5 flex-1 min-w-[140px] max-w-[200px] flex flex-col items-center justify-center text-center border border-border hover:border-primary/50 transition-colors"
               >
                 <card.icon className="w-6 h-6 text-primary mb-3 opacity-80" />
@@ -242,14 +242,14 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, margin: "-100px" }}
               variants={fadeInUp}
               className="w-full lg:w-5/12 space-y-6 lg:sticky lg:top-32 h-fit"
             >
-              <motion.h3 
+              <motion.h3
                 className="text-3xl md:text-4xl font-bold leading-tight"
                 variants={{
                   hidden: { opacity: 1 },
@@ -270,7 +270,7 @@ export default function Home() {
                     {char}
                   </motion.span>
                 ))}
-                <br/>
+                <br />
                 <span className="text-primary italic font-serif">
                   {"Technology".split("").map((char, index) => (
                     <motion.span
@@ -294,30 +294,30 @@ export default function Home() {
                 </p>
               </div>
             </motion.div>
-            
+
             <div className="w-full lg:w-7/12 relative" ref={timelineRef}>
               {/* Background line */}
               <div className="absolute left-[15px] md:left-[27px] top-4 bottom-4 w-[2px] bg-border/30 hidden sm:block" />
               {/* Animated foreground line */}
-              <motion.div 
-                className="absolute left-[15px] md:left-[27px] top-4 bottom-4 w-[2px] bg-primary hidden sm:block origin-top z-0" 
-                style={{ scaleY: scrollYProgress }} 
+              <motion.div
+                className="absolute left-[15px] md:left-[27px] top-4 bottom-4 w-[2px] bg-primary hidden sm:block origin-top z-0"
+                style={{ scaleY: scrollYProgress }}
               />
               <div className="space-y-16">
                 {/* Timeline Item 1 */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
-                  <motion.div 
+                  <motion.div
                     initial={{ backgroundColor: "rgba(255,255,255,0.2)", scale: 0.8 }}
                     whileInView={{ backgroundColor: "#8b5cf6", scale: 1.2 }}
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.4 }}
-                    className="absolute left-[-2px] sm:left-[10px] md:left-[22px] top-[10px] w-3 h-3 rounded-full hidden sm:block z-10" 
+                    className="absolute left-[-2px] sm:left-[10px] md:left-[22px] top-[10px] w-3 h-3 rounded-full hidden sm:block z-10"
                   />
                   <div className="flex-1">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase mb-2 block">Pillar 01 / Educate</span>
@@ -330,19 +330,19 @@ export default function Home() {
                 </motion.div>
 
                 {/* Timeline Item 2 */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
-                  <motion.div 
+                  <motion.div
                     initial={{ backgroundColor: "rgba(255,255,255,0.2)", scale: 0.8 }}
                     whileInView={{ backgroundColor: "#8b5cf6", scale: 1.2 }}
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.4 }}
-                    className="absolute left-[-2px] sm:left-[10px] md:left-[22px] top-[10px] w-3 h-3 rounded-full hidden sm:block z-10" 
+                    className="absolute left-[-2px] sm:left-[10px] md:left-[22px] top-[10px] w-3 h-3 rounded-full hidden sm:block z-10"
                   />
                   <div className="flex-1">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase mb-2 block">Pillar 02 / Empower</span>
@@ -355,19 +355,19 @@ export default function Home() {
                 </motion.div>
 
                 {/* Timeline Item 3 */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
-                  <motion.div 
+                  <motion.div
                     initial={{ backgroundColor: "rgba(255,255,255,0.2)", scale: 0.8 }}
                     whileInView={{ backgroundColor: "#8b5cf6", scale: 1.2 }}
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.4 }}
-                    className="absolute left-[-2px] sm:left-[10px] md:left-[22px] top-[10px] w-3 h-3 rounded-full hidden sm:block z-10" 
+                    className="absolute left-[-2px] sm:left-[10px] md:left-[22px] top-[10px] w-3 h-3 rounded-full hidden sm:block z-10"
                   />
                   <div className="flex-1">
                     <span className="text-primary font-mono text-sm tracking-widest uppercase mb-2 block">Pillar 03 / Excel</span>
@@ -454,7 +454,7 @@ export default function Home() {
       {/* Contact Section (Footer Join Us Overlay) */}
       <section id="contact" className="relative py-32 lg:py-48 overflow-hidden border-t border-border/30">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 z-0"
           style={{ maskImage: "linear-gradient(to top, black 70%, transparent 100%)", WebkitMaskImage: "linear-gradient(to top, black 70%, transparent 100%)" }}
         >
@@ -471,7 +471,7 @@ export default function Home() {
 
         <div className="container px-4 md:px-6 mx-auto relative z-10">
           <div className="max-w-md">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: false, margin: "-50px" }}
@@ -483,27 +483,27 @@ export default function Home() {
 
               <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                 <div>
-                  <input 
-                    type="text" 
-                    placeholder="Leave a request or comment" 
+                  <input
+                    type="text"
+                    placeholder="Leave a request or comment"
                     className="w-full bg-transparent border-b border-border pb-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
                   />
                 </div>
                 <div>
-                  <input 
-                    type="text" 
-                    placeholder="Your name" 
+                  <input
+                    type="text"
+                    placeholder="Your name"
                     className="w-full bg-transparent border-b border-border pb-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
                   />
                 </div>
                 <div>
-                  <input 
-                    type="email" 
-                    placeholder="Email address" 
+                  <input
+                    type="email"
+                    placeholder="Email address"
                     className="w-full bg-transparent border-b border-border pb-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
                   />
                 </div>
-                <button 
+                <button
                   type="submit"
                   className="w-full bg-white text-black font-semibold py-3.5 rounded mt-4 hover:bg-gray-200 transition-colors flex items-center justify-center gap-2"
                 >

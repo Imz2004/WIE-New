@@ -45,7 +45,7 @@ export default function InitiativesCarousel({ initiatives }: InitiativesCarousel
             const zIndex = isActive ? 10 : 5 - Math.abs(offset);
             const scale = isActive ? 1 : 0.85;
             const x = offset * 110; // offset in percentage/pixels
-            const opacity = isActive ? 1 : 0.6;
+            const opacity = isActive ? 1 : 0.9;
             const rotateY = offset * -15; // slight rotation for coverflow effect
 
             return (
@@ -64,8 +64,8 @@ export default function InitiativesCarousel({ initiatives }: InitiativesCarousel
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
                 onDragEnd={handleDragEnd}
-                className={`absolute w-full max-w-[280px] md:max-w-[320px] bg-background border border-border/50 rounded-2xl p-8 shadow-xl ${
-                  isActive ? "shadow-primary/20 border-primary/50" : "shadow-none"
+                className={`absolute w-full max-w-[280px] md:max-w-[320px] bg-zinc-900/60 backdrop-blur-xl border rounded-2xl p-8 shadow-xl transition-colors duration-300 ${
+                  isActive ? "shadow-[0_0_30px_rgba(139,92,246,0.3)] border-purple-500/60 bg-zinc-900/90" : "shadow-none border-white/10"
                 }`}
                 style={{
                   transformOrigin: "center center",
