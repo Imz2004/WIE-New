@@ -15,7 +15,7 @@ export default function Home() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-    
+
     const formData = new FormData(e.currentTarget);
     // Uses the API key from environment variables
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
@@ -25,7 +25,7 @@ export default function Home() {
         method: "POST",
         body: formData
       });
-      
+
       if (response.ok) {
         setSubmitStatus("success");
         e.currentTarget.reset();
@@ -439,7 +439,7 @@ export default function Home() {
 
       {/* What We Offer (Initiatives Section) */}
       <section className="py-24 bg-card/20 border-y border-border/30 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="container px-4 md:px-6 mx-auto"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -478,7 +478,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 100, rotateX: 360, scale: 0.5 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.25, delay: index * 0.05, type: "spring", bounce: 0.2 }}
+                transition={{ duration: 0.15, delay: index * 0.03, type: "spring", bounce: 0.1 }}
                 style={{ transformPerspective: 1200, transformOrigin: "center" }}
                 className="group relative backdrop-blur-xl bg-muted border border-border rounded-2xl overflow-hidden hover:shadow-[0_0_25px_rgba(139,92,246,0.3)] hover:border-primary/60 transition-all duration-500 flex flex-col"
               >
