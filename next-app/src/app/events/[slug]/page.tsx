@@ -49,11 +49,11 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
           return (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.8, delay: pos.delay, type: "spring" }}
+              initial={{ opacity: 0, y: 50, scale: 0.9, rotateX: -45 }}
+              animate={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+              transition={{ duration: 0.8, delay: pos.delay, type: "spring", bounce: 0.4 }}
               className="hidden lg:block absolute w-64 h-40 xl:w-80 xl:h-48 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-purple-600/30 z-10"
-              style={{ ...pos }}
+              style={{ ...pos, transformPerspective: 1000 }}
             >
               <Image src={src} alt="" fill className="object-cover object-[center_30%] transition-transform duration-700 hover:scale-110" unoptimized />
               <div className="absolute inset-0 bg-purple-900/20 mix-blend-overlay pointer-events-none" />
@@ -63,9 +63,10 @@ export default function EventPage({ params }: { params: Promise<{ slug: string }
 
         <div className="relative z-0 text-center max-w-4xl mx-auto backdrop-blur-sm p-8 rounded-2xl">
           <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 40, rotateX: -50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+            transition={{ duration: 0.9, type: "spring", bounce: 0.4 }}
+            style={{ transformPerspective: 1200 }}
             className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white to-purple-400 drop-shadow-2xl"
           >
             {event.title}
