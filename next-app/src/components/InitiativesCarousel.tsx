@@ -119,6 +119,9 @@ function CarouselCard({ item, idx, dragX, numItems }: any) {
   const opacity = useTransform(depth, (d: number) => Math.max(0, 0.3 + 0.7 * d)); // -0.4 to 1.0
   const zIndex = useTransform(depth, (d: number) => Math.round(d * 100));
 
+  // 3.5 Add 3D rotation based on horizontal position (coverflow effect)
+  const rotateY = useTransform(horizontal, [-1, 0, 1], [45, 0, -45]);
+
   // 4. Calculate X translation. 
   // IMPORTANT: We subtract dragX to cancel out the physical movement of the parent container,
   // keeping the entire carousel perfectly centered on the screen while it spins!
@@ -131,7 +134,8 @@ function CarouselCard({ item, idx, dragX, numItems }: any) {
 
   // Derived state for purely cosmetic coloring of the "front-most" card
   // This uses state because tailwind classes can't be driven by framer motion values natively
-  const [isActive, setIsActive] = useState(false);
+  // We initialize to idx === 0 because the first card is always in front on load
+  const [isActive, setIsActive] = useState(idx === 0);
   
   useMotionValueEvent(depth, "change", (latest) => {
     // If it's very close to the front (depth ~ 1.0), it's active
@@ -145,7 +149,8 @@ function CarouselCard({ item, idx, dragX, numItems }: any) {
         scale,
         opacity,
         zIndex,
-        // No rotateY here! Cards remain perfectly "billboarded" and flat.
+        rotateY,
+        transformPerspective: 1200,
       }}
       className={`absolute w-full max-w-[320px] md:max-w-[400px] bg-zinc-900/60 backdrop-blur-xl border rounded-2xl p-10 shadow-xl transition-colors duration-300 ${
         isActive 

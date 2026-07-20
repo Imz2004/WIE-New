@@ -3,11 +3,41 @@
 import Image from "next/image";
 import Link from "next/link";
 import InitiativesCarousel from "@/components/InitiativesCarousel";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Users, Calendar, Award, Globe, BookOpen, Star, Target, Handshake, Trophy } from "lucide-react";
 export default function Home() {
   const timelineRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    const formData = new FormData(e.currentTarget);
+    // Uses the API key from environment variables
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      
+      if (response.ok) {
+        setSubmitStatus("success");
+        e.currentTarget.reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const { scrollYProgress } = useScroll({
     target: timelineRef,
     offset: ["start center", "end center"]
@@ -231,14 +261,19 @@ export default function Home() {
             className="flex flex-wrap md:flex-nowrap gap-4 justify-center"
           >
             {highlightCards.map((card, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="glass rounded-xl p-4 md:p-5 flex-1 min-w-[140px] max-w-[200px] flex flex-col items-center justify-center text-center border border-border hover:border-primary/50 transition-colors"
+                initial={{ opacity: 0, y: 50, rotateX: -30, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: idx * 0.1 + 0.5, type: "spring", bounce: 0.4 }}
+                style={{ transformPerspective: 1000 }}
+                className="glass rounded-xl p-4 md:p-5 flex-1 min-w-[140px] max-w-[200px] flex flex-col items-center justify-center text-center border border-border hover:border-primary/50 transition-colors hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.2)]"
               >
                 <card.icon className="w-6 h-6 text-primary mb-3 opacity-80" />
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-1">{card.value}</h3>
                 <p className="text-xs md:text-sm text-muted-foreground font-medium">{card.label}</p>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
@@ -321,10 +356,11 @@ export default function Home() {
               <div className="space-y-16">
                 {/* Timeline Item 1 */}
                 <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: 50, rotateY: -30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
                   viewport={{ once: false, margin: "-100px" }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+                  style={{ transformPerspective: 1200, transformOrigin: "left" }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
                   <motion.div
@@ -346,10 +382,11 @@ export default function Home() {
 
                 {/* Timeline Item 2 */}
                 <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: 50, rotateY: -30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
                   viewport={{ once: false, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
+                  transition={{ duration: 0.8, delay: 0.1, type: "spring", bounce: 0.4 }}
+                  style={{ transformPerspective: 1200, transformOrigin: "left" }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
                   <motion.div
@@ -371,10 +408,11 @@ export default function Home() {
 
                 {/* Timeline Item 3 */}
                 <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: 50, rotateY: -30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, x: 0, rotateY: 0, scale: 1 }}
                   viewport={{ once: false, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
+                  transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.4 }}
+                  style={{ transformPerspective: 1200, transformOrigin: "left" }}
                   className="relative pl-8 md:pl-20 sm:pl-16 flex flex-col md:flex-row gap-8 items-start"
                 >
                   <motion.div
@@ -400,8 +438,14 @@ export default function Home() {
       </section>
 
       {/* What We Offer (Initiatives Section) */}
-      <section className="py-24 bg-card/20 border-y border-border/30">
-        <div className="container px-4 md:px-6 mx-auto">
+      <section className="py-24 bg-card/20 border-y border-border/30 overflow-hidden">
+        <motion.div 
+          className="container px-4 md:px-6 mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
+        >
           {/* Section Header */}
           <div className="flex items-center justify-center mb-16">
             <div className="h-px bg-border flex-grow max-w-[100px]" />
@@ -412,7 +456,7 @@ export default function Home() {
           </div>
 
           <InitiativesCarousel initiatives={initiatives} />
-        </div>
+        </motion.div>
       </section>
 
       {/* Our Work Section */}
@@ -431,11 +475,12 @@ export default function Home() {
             {allEvents.map((event, index) => (
               <motion.div
                 key={event.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative backdrop-blur-xl bg-muted border border-border rounded-2xl overflow-hidden hover:shadow-[0_0_25px_rgba(139,92,246,0.3)] hover:-translate-y-2 hover:border-primary/60 transition-all duration-500 flex flex-col"
+                initial={{ opacity: 0, y: 100, rotateX: 360, scale: 0.5 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.25, delay: index * 0.05, type: "spring", bounce: 0.2 }}
+                style={{ transformPerspective: 1200, transformOrigin: "center" }}
+                className="group relative backdrop-blur-xl bg-muted border border-border rounded-2xl overflow-hidden hover:shadow-[0_0_25px_rgba(139,92,246,0.3)] hover:border-primary/60 transition-all duration-500 flex flex-col"
               >
                 <div className="relative h-60 w-full overflow-hidden shrink-0 border-b border-border">
                   <Image
@@ -487,19 +532,22 @@ export default function Home() {
         <div className="container px-4 md:px-6 mx-auto relative z-10">
           <div className="max-w-md">
             <motion.div
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 80, rotateX: -30, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: false, margin: "-50px" }}
-              transition={{ duration: 0.7, type: "spring", bounce: 0.4 }}
+              transition={{ duration: 0.9, type: "spring", bounce: 0.4 }}
+              style={{ transformPerspective: 1000, transformOrigin: "top" }}
               className="bg-zinc-950/60 p-8 md:p-10 rounded-2xl border border-purple-500/30 shadow-2xl backdrop-blur-xl relative overflow-hidden"
             >
               <h3 className="text-3xl font-bold text-foreground mb-2">Want to join us,</h3>
               <h4 className="text-xl text-muted-foreground font-light mb-8">but still have questions?</h4>
 
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={handleContactSubmit}>
                 <div>
                   <input
                     type="text"
+                    name="message"
+                    required
                     placeholder="Leave a request or comment"
                     className="w-full bg-transparent border-b border-border pb-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
                   />
@@ -507,6 +555,8 @@ export default function Home() {
                 <div>
                   <input
                     type="text"
+                    name="name"
+                    required
                     placeholder="Your name"
                     className="w-full bg-transparent border-b border-border pb-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
                   />
@@ -514,15 +564,26 @@ export default function Home() {
                 <div>
                   <input
                     type="email"
+                    name="email"
+                    required
                     placeholder="Email address"
                     className="w-full bg-transparent border-b border-border pb-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
                   />
                 </div>
+
+                {submitStatus === "success" && (
+                  <p className="text-green-400 text-sm">Your message has been sent successfully!</p>
+                )}
+                {submitStatus === "error" && (
+                  <p className="text-red-400 text-sm">Something went wrong. Please check your API key.</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-white text-black font-semibold py-3.5 rounded mt-4 hover:bg-gray-200 transition-colors flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-white text-black font-semibold py-3.5 rounded mt-4 hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
                 >
-                  Send <ArrowRight size={16} />
+                  {isSubmitting ? "Sending..." : <>Send <ArrowRight size={16} /></>}
                 </button>
               </form>
             </motion.div>
