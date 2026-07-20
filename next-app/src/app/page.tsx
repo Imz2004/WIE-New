@@ -475,10 +475,11 @@ export default function Home() {
             {allEvents.map((event, index) => (
               <motion.div
                 key={event.title}
-                initial={{ opacity: 0, y: 100, rotateX: 360, scale: 0.5 }}
-                whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+                initial={{ opacity: 0, y: 80, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.15, delay: index * 0.03, type: "spring", bounce: 0.1 }}
+                whileHover={{ rotateY: 360, zIndex: 20, transition: { duration: 0.6, type: "tween", ease: "easeInOut" } }}
+                transition={{ duration: 0.5, delay: index * 0.1, type: "spring", bounce: 0.3 }}
                 style={{ transformPerspective: 1200, transformOrigin: "center" }}
                 className="group relative backdrop-blur-xl bg-muted border border-border rounded-2xl overflow-hidden hover:shadow-[0_0_25px_rgba(139,92,246,0.3)] hover:border-primary/60 transition-all duration-500 flex flex-col"
               >
