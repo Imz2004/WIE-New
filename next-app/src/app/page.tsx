@@ -478,9 +478,8 @@ export default function Home() {
                 initial={{ opacity: 0, y: 80, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
-                whileHover={{ rotateY: 360, zIndex: 20, transition: { duration: 0.6, type: "tween", ease: "easeInOut" } }}
+                whileHover={{ y: -8, scale: 1.02, zIndex: 20, transition: { duration: 0.3, type: "tween", ease: "easeOut" } }}
                 transition={{ duration: 0.5, delay: index * 0.1, type: "spring", bounce: 0.3 }}
-                style={{ transformPerspective: 1200, transformOrigin: "center" }}
                 className="group relative backdrop-blur-xl bg-muted border border-border rounded-2xl overflow-hidden hover:shadow-[0_0_25px_rgba(139,92,246,0.3)] hover:border-primary/60 transition-all duration-500 flex flex-col"
               >
                 <div className="relative h-60 w-full overflow-hidden shrink-0 border-b border-border">
