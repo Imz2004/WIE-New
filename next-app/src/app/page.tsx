@@ -19,6 +19,11 @@ export default function Home() {
     const formData = new FormData(e.currentTarget);
     // Uses the API key from environment variables
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
+    // Allows you to reply directly to the person who submitted the form
+    const userEmail = formData.get("email");
+    if (userEmail) {
+      formData.append("replyto", userEmail as string);
+    }
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
