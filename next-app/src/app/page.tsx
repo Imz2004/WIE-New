@@ -225,7 +225,7 @@ export default function Home() {
               className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-foreground drop-shadow-lg"
             >
               IEEE Women In Engineering <br className="hidden md:block" />
-              <span className="text-primary font-light">Affinity Group of IIT</span>
+              <span className="text-primary font-medium">Affinity Group of IIT</span>
             </motion.h1>
 
             <motion.p
