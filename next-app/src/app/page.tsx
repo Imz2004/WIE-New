@@ -15,8 +15,11 @@ export default function Home() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
+    
+    // Capture the form element synchronously to avoid it becoming null after await
+    const formElement = e.currentTarget;
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(formElement);
     // Uses the API key from environment variables
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
     // Allows you to reply directly to the person who submitted the form
@@ -26,18 +29,26 @@ export default function Home() {
     }
 
     try {
+      // Add the Accept header so Web3Forms knows to respond with JSON instead of a redirect
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
+        headers: {
+          "Accept": "application/json"
+        },
         body: formData
       });
+      
+      const data = await response.json();
 
-      if (response.ok) {
+      if (data.success) {
         setSubmitStatus("success");
-        e.currentTarget.reset();
+        formElement.reset();
       } else {
+        console.error("Form error:", data);
         setSubmitStatus("error");
       }
     } catch (error) {
+      console.error("Fetch error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
