@@ -82,18 +82,18 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  /* A 90deg gradient gives it a cylindrical 3D look with very dark purple */
-  background-image: linear-gradient(90deg, #2e1065 0%, #581c87 50%, #2e1065 100%);
+  /* Solid very dark purple */
+  background-color: #3b0764;
   background-clip: padding-box;
   border-radius: 9999px;
-  border: 2px solid #09090b;
+  border: 3px solid #09090b;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-image: linear-gradient(90deg, #3b0764 0%, #6b21a8 50%, #3b0764 100%);
+  background-color: #4c1d95;
 }
 
 /* When the user clicks and drags to scroll */
 ::-webkit-scrollbar-thumb:active {
-  background-image: linear-gradient(90deg, #1a063b 0%, #3b0764 50%, #1a063b 100%);
+  background-color: #2e1065;
 }
