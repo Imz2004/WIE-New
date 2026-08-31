@@ -16,12 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased min-h-screen flex flex-col">
+      <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1P9HSCP74K"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -29,6 +29,8 @@ export default function RootLayout({
             gtag('config', 'G-1P9HSCP74K');
           `}
         </Script>
+      </head>
+      <body className="antialiased min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">
           {children}
